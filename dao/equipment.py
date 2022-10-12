@@ -43,24 +43,21 @@ class Equipment:
     def __init__(self):
         self.equipment = self._get_equipment_data()
 
-    def get_weapon(self, weapon_name) -> Weapon:
+    def get_weapon(self, weapon_name: str) -> Weapon:
         """Возвращает объект оружия по имени"""
         weapons = self.equipment.weapons
         for w in weapons:
             if w.name == weapon_name:
                 return w
-            else:
-                raise ValueError
-        # return self.equipment.weapons[self.equipment.weapons.index(weapon_name)]
+        raise ValueError
 
-    def get_armor(self, armor_name) -> Armor:
+    def get_armor(self, armor_name: str) -> Armor:
         """Возвращает объект брони по имени"""
         armors = self.equipment.armors
         for a in armors:
             if a.name == armor_name:
                 return a
-            else:
-                raise ValueError
+        raise ValueError
 
     def get_weapons_names(self) -> list:
         """Возвращает список с оружием"""
@@ -68,7 +65,7 @@ class Equipment:
         weapons = [w.name for w in weapons]
         return weapons
 
-    def get_armors_names(self) -> list:
+    def get_armors_names(self) -> list[str]:
         """Возвращает список с броней"""
         armors = self.equipment.armors
         armors = [a.name for a in armors]
@@ -76,7 +73,7 @@ class Equipment:
 
     @staticmethod
     def _get_equipment_data() -> EquipmentData:
-        """Метод загружает json в переменную EquipmentData"""
+        """Метод загружает json в дата класс EquipmentData"""
         equipment_file = open(WEAPONS_and_ARMORS, encoding='utf-8')
         data = json.load(equipment_file)
         equipment_file.close()

@@ -48,22 +48,22 @@ class Skill(ABC):
 
 
 class FuryPunch(Skill):
-    name = 'Fury Punch'
+    name = 'Яростный удар'
     stamina = 6
-    damage = 12
+    damage = 36
 
     def skill_effect(self) -> str:
         self.target.hp -= self.damage
         self.user.stamina -= self.stamina
-        return f"{self.user.name} использовал {self.name} и атаковал противника."
+        return f"{self.user.name} использовал {self.name} и атаковал противника, нанеся {self.damage} урона."
 
 
 class HardShot(Skill):
-    name = 'Hard Shot'
+    name = 'Меткий выстрел'
     stamina = 4
-    damage = 8
+    damage = 24
 
     def skill_effect(self) -> str:
         self.target.hp -= self.damage
         self.user.stamina -= self.stamina
-        return f"{self.user.name} использовал {self.name} и атаковал противника."
+        return f"{self.user.name} использовал {self.name} и атаковал противника, нанеся {self.damage} урона."
