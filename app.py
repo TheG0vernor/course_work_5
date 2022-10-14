@@ -61,8 +61,7 @@ def pass_turn():
 @app.route("/fight/end-fight")
 def end_fight():
     """Кнопка завершения игры"""
-    arena._instances = {}
-    arena.game_is_running = False
+    arena.battle_result = None
     return render_template("index.html", heroes=heroes)
 
 
