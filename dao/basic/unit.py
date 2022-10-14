@@ -58,9 +58,7 @@ class BaseUnit(ABC):
 
     @abstractmethod
     def hit(self, target: BaseUnit) -> str:
-        """
-        этот метод будет переопределен ниже
-        """
+        """Этот метод будет переопределен ниже"""
         pass
 
     def use_skill(self, target: BaseUnit) -> str:

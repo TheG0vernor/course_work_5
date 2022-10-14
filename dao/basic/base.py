@@ -67,8 +67,10 @@ class Arena(metaclass=BaseSingleton):
         if self._check_players_hp():
             return self.battle_result
         result = self.player.hit(self.enemy)
+        if not result:
+            result2 = self.next_turn()
+            return f'{result2}'
         result2 = self.enemy.hit(self.player)
-        self.next_turn()
         return f'{result}<br>' \
                f'{result2}'
 
