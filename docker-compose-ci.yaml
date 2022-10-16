@@ -1,8 +1,8 @@
 version: '3.9'
-
 services:
-
   app:
     build: .
     command: gunicorn --bind 0.0.0.0:5000 wsgi:app
     restart: always
+    ports:
+      - "5000:5000"
