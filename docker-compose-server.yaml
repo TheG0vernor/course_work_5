@@ -1,6 +1,6 @@
 version: "3.9"
 services:
   api:
-    image: vadimlysenko/apeha:master-3259330673
+    image: vadimlysenko/apeha:latest
     ports:
     - 80:80
