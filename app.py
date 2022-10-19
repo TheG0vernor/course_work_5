@@ -28,7 +28,7 @@ def start_fight():
     return render_template('fight.html', heroes=heroes)
 
 
-@app.route("/fight/hit")
+@app.route("/fight/hit/")
 def hit():
     """Экран сражения"""
     if arena.game_is_running:
