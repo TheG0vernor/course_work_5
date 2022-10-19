@@ -38,7 +38,7 @@ def hit():
     return render_template('fight.html', result=result, heroes=heroes)
 
 
-@app.route("/fight/use-skill")
+@app.route("/fight/use-skill/")
 def use_skill():
     """Кнопка использования умения"""
     if arena.game_is_running:
@@ -48,7 +48,7 @@ def use_skill():
     return render_template('fight.html', result=result, heroes=heroes)
 
 
-@app.route("/fight/pass-turn")
+@app.route("/fight/pass-turn/")
 def pass_turn():
     """Кнопка пропуска хода"""
     if arena.game_is_running:
@@ -58,7 +58,7 @@ def pass_turn():
     return render_template('fight.html', result=result, heroes=heroes)
 
 
-@app.route("/fight/end-fight")
+@app.route("/fight/end-fight/")
 def end_fight():
     """Кнопка завершения игры"""
     arena.battle_result = None
